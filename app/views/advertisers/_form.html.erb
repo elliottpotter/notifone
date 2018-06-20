@@ -1,0 +1,37 @@
+<%= form_with(model: advertiser, local: true) do |form| %>
+  <% if advertiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advertiser.errors.count, "error") %> prohibited this advertiser from being saved:</h2>
+
+      <ul>
+      <% advertiser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :advertiser_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email, id: :advertiser_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, id: :advertiser_phone_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :stripe_customer_id %>
+    <%= form.text_field :stripe_customer_id, id: :advertiser_stripe_customer_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

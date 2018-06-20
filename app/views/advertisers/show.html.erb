@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @advertiser.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @advertiser.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @advertiser.phone_number %>
+</p>
+
+<p>
+  <strong>Stripe customer:</strong>
+  <%= @advertiser.stripe_customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_advertiser_path(@advertiser) %> |
+<%= link_to 'Back', advertisers_path %>
